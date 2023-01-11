@@ -1,24 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Menu from './components/menu'
 
 function App() {
+  const handleRegimeClick = (index: number) => {
+    console.log(index)
+  }
+
+  const handleFormuleClick = (index: number) => {
+    console.log(index)
+  }
+
+  const handleFacturationClick = (index: number) => {
+    console.log(index)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <header></header>
+     <nav>
+      <Menu data={["Vegan", "Viendard sensible", "Véquoi?"]} onClick={handleRegimeClick} />
+      <Menu data={["Petite faim", "Grosse dalle"]} onClick={handleFormuleClick} />
+     </nav>
+     <section></section>
+     <footer>
+      <Menu data={["Abonnés à inpulse.tv", "Pompiers et militaires", "Les autres"]} onClick={handleFacturationClick} />
+      <Menu data={["Commander"]} />
+     </footer>
     </div>
   );
 }
